@@ -2,15 +2,22 @@
 /* chèn font  */
 
 :root {
-  --pri-co: #9aa6b2;
-  --sec-co: #bcccdc;
-  --bri-co: #d9eafd;
-  --hcont-co: #f8fafc;
   --lm-font-size: calc(0.5rem + 100%);
   --st-font-size: calc(5rem + 2vw);
   --text-font-size: calc(1rem + 0.5vw);
 }
-
+[data-theme="dark"] {
+  --pri-co: #213555;
+  --sec-co: #3e5879;
+  --bri-co: #d8c4b6;
+  --hcont-co: #f5efe7;
+}
+[data-theme="light"] {
+  --pri-co: #78b3ce;
+  --sec-co: #3e5879;
+  --bri-co: #c9e6f0;
+  --hcont-co: #fbf8ef;
+}
 /* tổng thể */
 * {
   box-sizing: border-box;
@@ -47,6 +54,30 @@ a#to-top {
 }
 a#to-top:hover {
   transform: rotate(495deg);
+}
+input#theme::before {
+  z-index: 6;
+  content: "Đổi màu trang web!";
+  border-radius: 30px;
+  width: max-content;
+  height: 6vh;
+  padding: 1rem 3rem;
+  font-size: calc(var(--text-font-size) + 1rem);
+  background-color: var(--hcont-co);
+  color: var(--sec-co);
+  position: fixed;
+  bottom: 5rem;
+  left: 2rem;
+  transition: background-color 0.3s linear, color 0.2s ease;
+}
+input#theme:checked::before {
+  background-color: var(--sec-co);
+  color: var(--hcont-co);
+}
+a.arrow {
+  position: relative;
+  transform: translate(-4%, -10%);
+  scale: 1;
 }
 /* header */
 header {
@@ -85,6 +116,7 @@ header p {
   font-size: calc(1vw + 0.5rem);
   line-height: 1.2;
   font-weight: 600;
+  color: var(--pri-co);
 }
 /* căn chỉnh img trong header */
 header img {
@@ -129,7 +161,7 @@ header div.right p {
 /* tuỳ chỉnh navbar */
 
 .navbar {
-  margin-top: 1rem;
+  margin-top: 3rem;
   width: 78vw;
   margin-left: auto;
   margin-right: auto;
