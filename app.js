@@ -7,4 +7,5 @@ theme.addEventListener("click", () => {
   } else {
     html.setAttribute("data-theme", "dark");
   }
+  return 0;
 });

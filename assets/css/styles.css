@@ -55,6 +55,7 @@ a#to-top {
 a#to-top:hover {
   transform: rotate(495deg);
 }
+/* random */
 input#theme::before {
   z-index: 6;
   content: "Đổi màu trang web!";
